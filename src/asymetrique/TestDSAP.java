@@ -11,6 +11,8 @@ import java.security.interfaces.DSAPrivateKey;
 import java.security.interfaces.DSAPublicKey;
 import java.security.spec.DSAPrivateKeySpec;
 import java.security.spec.DSAPublicKeySpec;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 
 public class TestDSAP {
     public static void main(String[] args) throws Exception{
@@ -32,5 +34,9 @@ public class TestDSAP {
         KeyFactory kf = KeyFactory.getInstance("DSA","BC");
         DSAPublicKey pub2 = (DSAPublicKey) kf.generatePublic(pubSpec);
         DSAPrivateKey priv2 = (DSAPrivateKey) kf.generatePrivate(privSpec);
+        X509EncodedKeySpec x509 = new X509EncodedKeySpec(pub1.getEncoded());
+        DSAPublicKey pub3 = (DSAPublicKey) kf.generatePrivate(x509);
+        PKCS8EncodedKeySpec pkcs = new PKCS8EncodedKeySpec(priv1.getEncoded());
+        DSAPrivateKey priv3 = (DSAPrivateKey) kf.generatePrivate(pkcs);
     }
 }
