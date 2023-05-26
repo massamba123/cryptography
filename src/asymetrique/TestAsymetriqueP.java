@@ -10,7 +10,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Scanner;
 
-public class TestAsymetriqueProf {
+public class TestAsymetriqueP {
     public static void genKey(String algorithme,int taille,String path) throws Exception{
         KeyPairGenerator kpg = KeyPairGenerator.getInstance(algorithme);
         kpg.initialize(taille);
@@ -87,9 +87,9 @@ public class TestAsymetriqueProf {
         String algo = scanner.nextLine();
         System.out.println("Entrer la taille de la clé chiffrement \n");
         int taille = scanner.nextInt();
-        TestAsymetriqueProf.genKey(algo,taille,path);
-        PublicKey publicKey = TestAsymetriqueProf.getPub(path+"pubProf.txt",algo);
-        PrivateKey privateKey = TestAsymetriqueProf.getPrivate(path+"privProf.txt",algo);
+        TestAsymetriqueP.genKey(algo,taille,path);
+        PublicKey publicKey = TestAsymetriqueP.getPub(path+"pubProf.txt",algo);
+        PrivateKey privateKey = TestAsymetriqueP.getPrivate(path+"privProf.txt",algo);
         String outpub = "Cle publique : \nAlgorithme  :"+publicKey.getAlgorithm()+"\nValeur : "+ Utils.toHex(publicKey.getEncoded());
         String outpriv = "Cle privée : \nAlgorithme  :"+privateKey.getAlgorithm()+"\nValeur : "+Utils.toHex(privateKey.getEncoded());
         System.out.println(outpub);

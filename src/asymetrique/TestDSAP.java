@@ -12,7 +12,7 @@ import java.security.interfaces.DSAPublicKey;
 import java.security.spec.DSAPrivateKeySpec;
 import java.security.spec.DSAPublicKeySpec;
 
-public class TestDSAProf {
+public class TestDSAP {
     public static void main(String[] args) throws Exception{
         BouncyCastleProvider bc = new BouncyCastleProvider();
         Security.insertProviderAt(bc,1);
