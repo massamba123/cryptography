@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="bcprov-jdk15-141">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Cours-TP_Crypto-Java/BC/bcprov-jdk15-141.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Cours-TP_Crypto-Java/BC/bcprov-jdk15-141.jar!/" />
+    </SOURCES>
+  </library>
+</component>
